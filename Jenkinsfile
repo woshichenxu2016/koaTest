@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy - Staging') {
             steps {
                 input "Does the staging environment look ok?"
-                sh './aa.sh'
+                sh '/Users/chenxu/Desktop/koaTest/koaTest/aa.sh'
             }
         }
        stage('Deploy - Production') {
