@@ -15,6 +15,7 @@ pipeline {
         }
         stage('Deploy - Staging') {
             steps {
+                ls -lah
                 sh './aa.sh'
             }
         }
