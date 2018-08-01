@@ -15,18 +15,12 @@ pipeline {
         }
         stage('Deploy - Staging') {
             steps {
-                sh './deploy staging'
-                sh './run-smoke-tests'
+                sh './aa'
             }
         }
-        stage('Sanity check') {
+       stage('Deploy - Production') {
             steps {
-                input "Does the staging environment look ok?"
-            }
-        }
-        stage('Deploy - Production') {
-            steps {
-                sh './deploy production'
+                echo './deploy production'
             }
         }
     }
@@ -34,7 +28,6 @@ pipeline {
     post {
         always {
             echo 'One way or another, I have finished'
-            deleteDir() /* clean up our workspace */
         }
         success {
             echo 'I succeeeded!'
