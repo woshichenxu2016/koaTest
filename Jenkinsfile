@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploy - Staging') {
             steps {
-                ls -lah
+                input "Does the staging environment look ok?"
                 sh './aa.sh'
             }
         }
