@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploy - Staging') {
             steps {
-                sudo sh './aa.sh'
+                sh './aa.sh'
             }
         }
        stage('Deploy - Production') {
