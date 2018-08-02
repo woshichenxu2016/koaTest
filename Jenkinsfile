@@ -3,11 +3,6 @@ pipeline {
         label 'master'
     }
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building'
-            }
-        }
         stage('Test') {
             steps {
                 echo 'Testing'
@@ -17,11 +12,6 @@ pipeline {
             steps {
                 input "Does the staging environment look ok?"
                 sh '/Users/chenxu/Desktop/koaTest/koaTest/aa.sh'
-            }
-        }
-       stage('Deploy - Production') {
-            steps {
-                echo './deploy production'
             }
         }
     }
